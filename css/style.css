@@ -15,6 +15,7 @@
     --primary-background-color: #2F303A;
     --secondary-background-color: #F5F4FA;
     --grey: #AFB1B8;
+    --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -128,7 +129,9 @@ header.container {
     height: 4px;
     border-radius: 2px;
     background: var(--accent-color);
-    margin-top: 28px;
+    left: 0px;
+    bottom: -1px;
+    transition: background 250ms var(--timing-function), color 250ms var(--timing-function);
 }
 
 .link:hover,
@@ -142,14 +145,8 @@ header.container {
     line-height: 1.14;
     letter-spacing: 0.02em;
     color: var(--primary-text-color);
+    transition: color 250ms var(--timing-function);
 }
-
-
-
-
-
-
-
 
 /* -----------------------------Контакты----------------------------- */
 .contact {
@@ -164,6 +161,7 @@ header.container {
     align-items: center;
     margin-right: 10px;
     gap: 10px;
+
 }
 
 .email {
@@ -177,6 +175,7 @@ header.container {
     letter-spacing: 0.02em;
     color: var(--title-text-color);
     fill: currentColor;
+    transition: color 250ms var(--timing-function);
 }
 
 .email:hover,
@@ -191,10 +190,13 @@ header.container {
 .icon-envelope:hover,
 .icon-envelope:focus {
     fill: var(--accent-color);
+
 }
 
 .tel {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding-top: 32px;
     padding-bottom: 32px;
     font-weight: 500;
@@ -203,6 +205,7 @@ header.container {
     letter-spacing: 0.02em;
     color: var(--title-text-color);
     fill: currentColor;
+    transition: color 250ms var(--timing-function);
 }
 
 .tel:hover,
@@ -239,7 +242,6 @@ header.container {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    outline: 1px solid black;
 }
 
 .hero-title {
@@ -281,10 +283,10 @@ header.container {
     background-color: var(--accent-color);
     border: none;
     border-radius: 4px;
-
+    transition: background-color 250ms var(--timing-function), color 250ms var(--timing-function);
 }
 
-/*------------------------ ФИЛЬТР РАБОТ ------------------------- */
+/*----------------- ФИЛЬТР РАБОТ-Портфолио ------------------ */
 
 .button {
     gap: 8px;
@@ -338,6 +340,7 @@ header.container {
     border: 1px solid transparent;
     color: var(--primary-text-color);
     background-color: var(--secondary-background-color);
+    transition: color 250ms var(--timing-function), background-color 250ms var(--timing-function);
 }
 
 .btn-group:nth-last-child(3) {
@@ -350,13 +353,46 @@ header.container {
     position: fixed;
     top: 0px;
     left: 0px;
-    width: 1600px;
-    height: 1024px;
+    width: 100%;
+    height: 100%;
     background-color: rgba(0, 0, 0, 0.2);
 }
 
+.backdrop.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+}
+
+.modal {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 528px;
+    height: 581px;
+    padding: 15px;
+    background-color: var(--white);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 250ms var(--timing-function), opacity 250ms var(--timing-function), visibility 250ms var(--timing-function);
+}
+
+.backdrop.is-hidden .modal {
+    transform: translate(-50%, -50%) scale(0.8);
+}
+
+.modal-close {
+    width: 18px;
+    height: 18px;
+    background-color: var(--white);
+    fill: var(--secondary-title-text-color);
+}
+
 .button-modal {
-    display: inline-block;
+    display: flex;
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -364,57 +400,9 @@ header.container {
     align-items: center;
     justify-content: center;
     background-color: var(--white);
-    margin-top: 8px;
-    margin-right: 8px;
-}
-
-.button-modal>.icon-close-black {
-    width: 18px;
-    height: 18px;
-    background-image: url("../images3/symbol-defs.svg#icon-close-black");
-    background-size: contain;
-}
-
-
-.modal {
-    display: flex;
+    top: 8px;
+    right: 8px;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 528px;
-    height: 581px;
-    padding: 15px;
-    background-color: var(--white);
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-}
-
-.backdrop.is-hidden {
-    opacity: 0;
-    pointer-events: none;
-}
-
-.modal.close {
-    display: flex;
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    width: 18px;
-    height: 18px;
-    transform: translate(-50%, -50%);
-    background-color: var(--white);
-    fill: var(--secondary-title-text-color);
-}
-
-.modal link {
-    position: relative;
-    background-color: var(--white);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    display: flex;
-    border-radius: 50%;
-    align-items: center;
-    justify-content: center;
 }
 
 /* ----------------------- НАШИ ОСОБЕННОСТИ --------------------- */
@@ -523,6 +511,33 @@ section {
     gap: 30px;
 }
 
+.work-ad {
+    position: relative
+}
+
+.ad {
+    position: absolute;
+    bottom: 0px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    height: 70px;
+    background: rgba(47, 48, 58, 0.8);
+}
+
+.ad-name {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    text-align: center;
+    padding-top: 27px;
+    padding-bottom: 27px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--white);
+}
+
 /*----------------------- ПОСТОЯННЫЕ КЛИЕНТЫ ----------------------*/
 .clients {
     padding-top: 94px;
@@ -561,18 +576,14 @@ section {
     border: 1px solid #AFB1B8;
     border-radius: 4px;
     fill: currentColor;
+    color: var(--grey);
+    transition: color 250ms var(--timing-function);
 }
 
 .clients-link:hover,
 .clients-link:focus {
     border: 1px solid var(--accent-color);
     background-color: var(--white);
-    fill: var(--accent-color);
-}
-
-.clients-logo {
-    align-items: center;
-    justify-content: center;
     fill: var(--grey);
 }
 
@@ -674,13 +685,15 @@ section {
     border-radius: 50%;
     align-items: center;
     justify-content: center;
-    fill: var(--grey);
+    fill: currentColor;
+    color: var(--grey);
+    transition: color 250ms var(--timing-function), background-color 250ms var(--timing-function);
 }
 
 .social-net.link:hover,
 .social-net.link:focus {
     background-color: var(--accent-color);
-    fill: var(--white);
+    color: var(--white);
 }
 
 /*-------------------------- ГАЛЕРЕЯ ----------------------------- */
@@ -716,6 +729,7 @@ section {
     padding-bottom: 20px;
     padding-left: 24px;
     padding-right: 24px;
+    border: 1px solid #EEEEEE;
 }
 
 .galery-item {
@@ -745,8 +759,9 @@ section {
 }
 
 .photo {
-    display: inline-block;
+    display: block;
     text-decoration: none;
+    transition: box-shadow 250ms var(--timing-function);
 }
 
 .photo:hover,
@@ -754,43 +769,36 @@ section {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
-
-
-
-.galery-picture::before {
-    display: inline-block;
-    content: "";
+.galery-overlay-text {
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    color: var(--white);
     background-color: rgba(33, 150, 243, 0.9);
     transform: translateY(100%);
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 63px 24px;
 }
 
-.photo:hover .galery-picture::before {
-    transform: translateY(0);
+.galery-overlay {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.56;
+    letter-spacing: 0.03em;
+    text-align: start;
 }
 
-.galery-example {
+.galery-picture {
     position: relative;
+    overflow: hidden;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-opacity: 1;
+.photo:hover .galery-overlay-text,
+.photo:focus .galery-overlay-text {
+    transform: translateY(0%);
+}
 
 /*--------------------------- ФУТЕР САЙТА ------------------------- */
 
@@ -840,6 +848,7 @@ opacity: 1;
     font-size: 14px;
     line-height: 1.7;
     color: var(--white);
+    transition: color 250ms var(--timing-function);
 }
 
 .email-item:hover,
@@ -852,6 +861,7 @@ opacity: 1;
     font-size: 14px;
     line-height: 1.7;
     color: rgba(255, 255, 255, 0.6);
+    transition: color 250ms var(--timing-function);
 }
 
 .tel-item:hover,
@@ -864,6 +874,7 @@ opacity: 1;
     font-size: 14px;
     line-height: 1.7;
     color: rgba(255, 255, 255, 0.6);
+    transition: color 250ms var(--timing-function);
 }
 
 footer.container {
@@ -913,6 +924,8 @@ footer.container {
     justify-content: center;
     background-color: rgba(255, 255, 255, 0.1);
     fill: currentColor;
+    color: var(--white);
+    transition: background-color 250ms var(--timing-function);
 }
 
 .join-icon {
