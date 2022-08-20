@@ -66,8 +66,48 @@
                         <use href="./images3/symbol-defs.svg#icon-close-black"></use>
                     </svg>
                 </button>
+
+
+
+
+                <form class="js-modal-form">
+                    <h3 class="form-field-title">Оставьте свои данные, мы вам перезвоним</h3>
+
+                    <div class="form-field">
+                        <label class="form-label" for="name">Имя</label>
+                        <input class="form-input" type=" text" name="name" id="name" placeholder="" autofocus />
+                    </div>
+
+                    <div class="form-field">
+                        <label class="form-label" for="email">Почта</label>
+                        <input class="form-input" type="email" name="email" id="mail" />
+                    </div>
+
+                    <div class="form-field">
+                        <label class="form-label" for="tel">Телефон</label>
+                        <input class="form-input" type="tel" name="tel" id="tel" />
+                    </div>
+
+                    <div class="form-field">
+                        <label for="comment" class="comment">Комментарий</label>
+                        <textarea class="comment-form" name="comment" id="comment" rows="10"
+                            placeholder="Введите текст"></textarea>
+                    </div>
+
+
+                    <div class="form-field">
+                        <input class="form-input-checkbox" type="checkbox" name="policy" id="policy" />
+                        <label class="form-label" for="policy">Соглашаюсь с рассылкой и принимаю <span
+                                class="accent">Условия договора</span></label>
+                        <button class="submit" type="submit">Отправить</button>
+                    </div>
+                </form>
             </div>
         </div>
+
+
+
+
         <section class="section features">
             <div class="container">
                 <h2 class="visually-hidden">Наши особенности</h2>
@@ -405,6 +445,23 @@
                                 <use href="./images2/symbol-defs.svg#icon-linkedin" />
                             </svg>
                         </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="subscription">
+                <h3 class="subscription-title">Подпишитесь на рассылку</h3>
+                <ul class="subscription-list">
+                    <li class="subscription-item">
+                        <div class="form-field">
+                            <label for="email">E-mail</label>
+                            <input type="email" name="email" id="mail" />
+                        </div>
+                    </li>
+                    <li class="subscription-item">
+                        <div class="form-field">
+                            <input type="email" name="email" id="mail" />
+                            <button class="submit" type=" submit">Подписаться</button>
+                        </div>
                     </li>
                 </ul>
             </div>
