@@ -66,49 +66,41 @@
                         <use href="./images3/symbol-defs.svg#icon-close-black"></use>
                     </svg>
                 </button>
-
-
                 <form class="js-modal-form">
                     <h3 class="form-field-title">Оставьте свои данные, мы вам перезвоним</h3>
-
-
-
                     <div class="form-field">
                         <label class="form-label" for="name">Имя</label>
-                        <span><svg class="form-icon-name" width="18px" height="18px">
+                        <div class="input-wrap">
+                            <input class="form-input" type="text" name="name" id="name" placeholder="" autofocus />
+                            <svg class="form-icon" width="18px" height="18px">
                                 <use href="./images3/symbol-defs2.svg#icon-person-black-18dp"></use>
-                            </svg></span>
-                        <input class="form-input" type=" text" name="name" id="name" placeholder="" autofocus />
+                            </svg>
+                        </div>
                     </div>
-
-
-
                     <div class="form-field">
                         <label class="form-label" for="tel">Телефон</label>
-                        <span><svg class="form-icon-tel" width="18px" height="18px">
+                        <div class="input-wrap">
+                            <input class=" form-input" type="tel" name="tel" id="tel" />
+                            <svg class="form-icon" width="18px" height="18px">
                                 <use href="./images3/symbol-defs2.svg#icon-phone-black-18dp"></use>
-                            </svg></span>
-                        <input class=" form-input" type="tel" name="tel" id="tel" />
+                            </svg>
+                        </div>
                     </div>
-
-
-
                     <div class="form-field">
                         <label class="form-label" for="email">Почта</label>
-                        <span><svg class="form-icon-email" width="18px" height="18px">
+                        <div class="input-wrap">
+                            <input class="form-input" type="email" name="email" id="mail" />
+                            <svg class="form-icon" width="18px" height="18px">
                                 <use href="./images3/symbol-defs2.svg#icon-email-black-18dp"></use>
-                            </svg></span>
-                        <input class="form-input" type="email" name="email" id="mail" />
+                            </svg>
+                        </div>
                     </div>
-
 
                     <div class="form-field">
                         <label for="comment" class="comment">Комментарий</label>
                         <textarea class="comment-form" name="comment" id="comment" rows="10"
                             placeholder="Введите текст"></textarea>
                     </div>
-
-
                     <div class="form-field">
                         <label class="form-label" for="policy">
                             <span>
@@ -123,8 +115,6 @@
                 </form>
             </div>
         </div>
-
-
         <section class="section features">
             <div class="container">
                 <h2 class="visually-hidden">Наши особенности</h2>
@@ -470,8 +460,8 @@
                 <ul class="subscription-list">
                     <li class="subscription-item">
                         <div class="subscription-field">
-                            <label class="subscription-label for=" email"></label>
-                            <input class="subscription-input type=" email" name="email" id="mail"
+                            <label class="subscription-label" for="email"></label>
+                            <input class="subscription-input" type="email" name="email" id="email"
                                 placeholder="E-mail" />
                         </div>
                     </li>
