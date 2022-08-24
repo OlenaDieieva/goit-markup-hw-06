@@ -986,12 +986,11 @@ footer.container {
 .modal-close {
     width: 18px;
     height: 18px;
-    background-color: var(--white);
-    fill: var(--secondary-title-text-color);
-    transition: fill 250ms var(--timing-function);
+    background-color: transparent;
 }
 
-.button-modal:hover .modal-close .button-modal:focus .modal-close {
+.button-modal:hover .modal-close,
+.button-modal:focus .modal-close {
     fill: var(--accent-color);
 }
 
@@ -1008,6 +1007,8 @@ footer.container {
     right: 8px;
     position: absolute;
     cursor: pointer;
+    fill: var(--secondary-title-text-color);
+    transition: fill 250ms var(--timing-function);
 }
 
 .js-modal-form {
@@ -1074,9 +1075,7 @@ footer.container {
     border-radius: 4px;
     resize: none;
     padding-top: 12px;
-    padding-bottom: 94px;
     padding-left: 16px;
-    padding-right: 350px;
 }
 
 .comment-form:focus {
